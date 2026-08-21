@@ -111,10 +111,9 @@ function DemoJourney({
           {submitted ? <motion.div key="success" initial={{ opacity: 0, y: 24, scale: .98 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: .45 }} className="flex min-h-[410px] flex-col justify-center">
             <motion.div initial={reduced ? false : { scale: .6, rotate: -12 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 260, damping: 17 }} className="grid size-14 place-items-center rounded-2xl bg-cyan text-ink"><Check className="size-7" /></motion.div>
             <h3 className="mt-7 font-display text-4xl font-semibold tracking-[-.06em]">Pyyntö vastaanotettu</h3>
-            <p className="mt-4 max-w-md leading-7 text-white/60">Kiitos — tässä prototyypissä lähetys on simuloitu eikä tietoja välitetä eteenpäin. Oikeassa toteutuksessa pyyntö ohjattaisiin sovittuun kanavaan.</p>
-            <Button variant="ghost" className="mt-8 w-fit" onClick={() => { setSubmitted(false); setDemoStep(0); setSiteStatus(''); setCompanyAge('') }}>Lähetä uusi pyyntö</Button>
+            <p className="mt-4 max-w-md leading-7 text-white/60">Kiitos.</p>
           </motion.div> : demoStep === 0 ? <motion.div key="situation" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -28 }} transition={{ duration: .38 }}>
-            <div className="flex items-center gap-3 text-cyan"><span className="grid size-9 place-items-center rounded-xl border border-cyan/30 bg-cyan/10"><Globe2 className="size-4" /></span><span className="text-xs font-semibold uppercase tracking-[.16em]">Vaihe 1 / 2</span></div>
+            <div className="flex items-center gap-3 text-cyan"><span className="grid size-9 place-items-center rounded-xl border border-cyan/30 bg-cyan/10"><Globe2 className="size-4" /></span><span className="text-xs font-semibold uppercase tracking-[.16em]">Vaihe 1 / 3</span></div>
             <h3 className="mt-6 font-display text-3xl font-semibold tracking-[-.055em] sm:text-4xl">Mikä on tilanteesi?</h3>
             <p className="mt-3 text-sm leading-6 text-white/55">Valitse lähtökohta — eteneminen tapahtuu heti valinnan jälkeen.</p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -127,18 +126,17 @@ function DemoJourney({
             </div>
           </motion.div> : demoStep === 1 ? <motion.div key="age" initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -28 }} transition={{ duration: .38 }}>
             <button type="button" onClick={() => setDemoStep(0)} className="inline-flex items-center gap-2 text-sm text-white/50 transition hover:text-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan"><ArrowLeft className="size-4" /> Muuta tilannetta</button>
-            <div className="mt-5 flex items-center gap-3 text-violet-300"><span className="grid size-9 place-items-center rounded-xl border border-violet-400/30 bg-violet-400/10"><CalendarDays className="size-4" /></span><span className="text-xs font-semibold uppercase tracking-[.16em]">Vaihe 2 / 2</span></div>
+            <div className="mt-5 flex items-center gap-3 text-violet-300"><span className="grid size-9 place-items-center rounded-xl border border-violet-400/30 bg-violet-400/10"><CalendarDays className="size-4" /></span><span className="text-xs font-semibold uppercase tracking-[.16em]">Vaihe 2 / 3</span></div>
             <h3 className="mt-6 font-display text-3xl font-semibold tracking-[-.055em] sm:text-4xl">Kuinka vanha yrityksesi on?</h3>
             <p className="mt-3 text-sm leading-6 text-white/55">Tämä auttaa meitä hahmottamaan, mistä tarina alkaa.</p>
             <div className="mt-8 grid grid-cols-2 gap-3">
               {['0–5 vuotta', '5–10 vuotta', '10–20 vuotta', '+20 vuotta'].map((age, index) => <motion.button {...cardMotion} type="button" key={age} onClick={() => chooseCompanyAge(age)} className="group relative min-h-28 overflow-hidden rounded-2xl border border-white/10 bg-white/[.035] p-4 text-left outline-none transition hover:border-violet-400/60 hover:bg-violet-400/[.07] focus-visible:ring-2 focus-visible:ring-violet-300"><span className="absolute right-4 top-4 text-xs text-white/25">0{index + 1}</span><span className="block font-display text-2xl font-medium tracking-[-.05em]">{age}</span><span className="mt-3 block h-px w-8 bg-violet-300/50 transition group-hover:w-16" /></motion.button>)}
             </div>
           </motion.div> : <motion.div key="form" initial={{ opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: .4 }}>
-            <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-semibold uppercase tracking-[.16em] text-cyan">Yhteystiedot</p><h3 className="mt-2 font-display text-3xl font-semibold tracking-[-.055em]">Viimeinen vaihe.</h3></div><button type="button" onClick={() => setDemoStep(1)} className="text-sm text-white/50 hover:text-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan">Muuta valintoja</button></div>
+            <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-semibold uppercase tracking-[.16em] text-cyan">Vaihe 3 / 3 · yhteystiedot</p><h3 className="mt-2 font-display text-3xl font-semibold tracking-[-.055em]">Kerro, miten tavoitamme sinut.</h3></div><button type="button" onClick={() => setDemoStep(1)} className="text-sm text-white/50 hover:text-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan">Muuta valintoja</button></div>
             <div className="mt-6 flex flex-wrap gap-2"><span className="rounded-full border border-cyan/25 bg-cyan/10 px-3 py-1.5 text-xs text-cyan">{siteStatus}</span><span className="rounded-full border border-violet-400/25 bg-violet-400/10 px-3 py-1.5 text-xs text-violet-200">{companyAge}</span></div>
             <motion.form onSubmit={submit} className="mt-7 grid gap-5" initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .16 }}>
               <div className="grid gap-5 sm:grid-cols-2"><Field label="Yrityksen nimi" name="company" autoComplete="organization" required /><Field label="Sähköposti" name="email" type="email" autoComplete="email" required /></div>
-              <Field label="Nykyinen verkkosivu tai “ei verkkosivua”" name="website" placeholder="https://... / ei verkkosivua" required />
               <div className="grid gap-5 sm:grid-cols-2"><Field label="Puhelinnumero (valinnainen)" name="phone" type="tel" autoComplete="tel" /><Field label="Lisätiedot (valinnainen)" name="notes" /></div>
               <Button type="submit" className="mt-2 w-full sm:w-fit">Pyydä maksuton demo <ArrowRight className="ml-2 size-4" /></Button>
             </motion.form>
@@ -150,6 +148,6 @@ function DemoJourney({
 }
 
 function Field({ label, name, textarea, ...props }: { label: string; name: string; textarea?: boolean } & React.InputHTMLAttributes<HTMLInputElement>) {
-  const shared = 'mt-2 w-full rounded-xl border border-white/10 bg-white/[.045] px-3.5 py-3 text-sm text-white outline-none placeholder:text-white/25 focus:border-cyan/70 focus:ring-1 focus:ring-cyan/70'
-  return <label className="block text-sm font-medium text-white/85">{label}{textarea ? <textarea name={name} className={`${shared} min-h-24 resize-y`} {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)} /> : <input name={name} className={shared} {...props} />}</label>
+  const shared = 'mt-2 w-full rounded-xl border border-white/10 bg-white/[.045] px-4 py-3.5 text-base text-white outline-none placeholder:text-white/25 focus:border-cyan/70 focus:ring-1 focus:ring-cyan/70'
+  return <label className="block text-base font-medium text-white/85">{label}{textarea ? <textarea name={name} className={`${shared} min-h-24 resize-y`} {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)} /> : <input name={name} className={shared} {...props} />}</label>
 }
