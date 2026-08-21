@@ -14,6 +14,30 @@
   .eyebrow { @apply text-xs font-semibold uppercase tracking-[.19em] text-cyan; }
   .text-gradient { background: linear-gradient(105deg, #fff 5%, #88ecff 38%, #a797ff 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .grid-field { background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
+  
+  /* Better focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid #60e6ff;
+    outline-offset: 2px;
+  }
+  
+  /* Improved scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #090a0f;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
