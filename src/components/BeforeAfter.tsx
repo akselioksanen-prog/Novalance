@@ -239,11 +239,11 @@ export function BeforeAfter() {
               </motion.div>
               
               {/* Labels */}
-              <div className="absolute left-4 top-4 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-white/80 backdrop-blur-sm">
-                Nykyinen
-              </div>
-              <div className="absolute right-4 top-4 rounded-full bg-cyan/20 px-3 py-1.5 text-xs font-medium text-cyan backdrop-blur-sm">
+              <div className="absolute left-4 top-4 rounded-full bg-cyan/20 px-3 py-1.5 text-xs font-medium text-cyan backdrop-blur-sm">
                 Mahdollinen suunta
+              </div>
+              <div className="absolute right-4 top-4 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-white/80 backdrop-blur-sm">
+                Nykyinen
               </div>
             </div>
           </div>
