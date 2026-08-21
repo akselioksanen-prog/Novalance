@@ -12,8 +12,8 @@ export function Navigation({ scrollToForm }: NavigationProps) {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-ink/75 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
-        <a href="#top" className="font-display text-lg font-bold tracking-[-.06em]" aria-label="Novalance etusivu">
-          nova<span className="text-cyan">lance</span>.
+        <a href="#top" className="font-display text-4xl font-bold tracking-[-.06em]" aria-label="Novalance etusivu">
+          nova<span className="text-cyan">lance</span>
         </a>
         <div className="hidden items-center gap-7 text-sm text-white/65 md:flex">
           <a className="hover:text-white" href="#how">Miten toimii</a>

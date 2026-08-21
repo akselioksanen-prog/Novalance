@@ -6,6 +6,7 @@ import { ProcessSection } from './components/ProcessSection'
 import { BeforeAfter } from './components/BeforeAfter'
 import { Benefits } from './components/Benefits'
 import { DemoRequestForm } from './components/DemoRequestForm'
+import { ContactInfo } from './components/ContactInfo'
 import { FinalCTA } from './components/FinalCTA'
 import { Footer } from './components/Footer'
 
@@ -33,6 +34,7 @@ export default function App() {
       <BeforeAfter />
       <Benefits />
       <DemoRequestForm />
+      <ContactInfo />
       <FinalCTA scrollToForm={scrollToForm} />
       <Footer />
     </main>
